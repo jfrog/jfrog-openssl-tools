@@ -24,5 +24,5 @@ Running the following command
 ```
 python scan_vulnerable_openssl_code.py ROOT_DIR
 ```
-Will recursively scan ROOT_DIR for ELF files which include the pattern `ossl_punycode_decode` (indicative of versions >=3.0.0)
+Will recursively scan ROOT_DIR for ELF files, and report the files which include the pattern `ossl_punycode_decode` (indicative of versions >=3.0.0), while files which in addition include the pattern `ripemd160_newctx` indicative of the updated version (3.0.7) are reported as such.
 
