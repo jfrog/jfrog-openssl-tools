@@ -17,5 +17,12 @@ For example:
 127.0.0.1:12345 -> Client certificate not required
 ```
 
+### 2. Which files on a local machine contain OpenSSL code of vulnerable versions
 
+Applications running OpenSSL are easy to miss if the library is statically linked into an application binary. 
+Running the following command
+```
+python scan_vulnerable_openssl_code.py ROOT_DIR
+```
+Will recursively scan ROOT_DIR for ELF files which include the pattern `ossl_punycode_decode` (indicative of versions >=3.0.0)
 
